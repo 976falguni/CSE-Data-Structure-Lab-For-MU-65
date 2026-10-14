@@ -78,10 +78,9 @@ struct Stack {
     void push(int x) {
         Node *newNode = new Node;
         newNode->val = x;
-        newNode->next = NULL;
         
         // Link the new node to the current top element
-        top->next = newNode;
+        newNode->next = top;
         
         // Update top to point to the new node
         top = newNode;
@@ -129,15 +128,8 @@ struct Stack {
     void push(int x) {
         Node *newNode = new Node;
         newNode->val = x;
-        newNode->next = NULL;
-        
-        // Link the new node to the current top element
-        top->next = newNode;
-        
-        // Update top to point to the new node
+        newNode->next = top;
         top = newNode;
-        
-        cout << "Pushed " << x << " onto the stack.\n";
     }
 
     // Remove the top element - Time Complexity: O(1)
